@@ -1,6 +1,7 @@
 interface Date {
     addDaysToCurrentDay(days : number): Date;
-    format():String;
+    format():string;
+
 }
 Date.prototype.addDaysToCurrentDay = function(days: number): Date{
    let dat = new Date(this.valueOf());
@@ -8,7 +9,7 @@ Date.prototype.addDaysToCurrentDay = function(days: number): Date{
    return dat;
 }
 
-Date.prototype.format = function():String{
+Date.prototype.format = function():string{
     let fecha = new Date(this.valueOf());
     var year = fecha.getFullYear();
     var month = (1 + fecha.getMonth()).toString();
@@ -19,8 +20,9 @@ Date.prototype.format = function():String{
 }
 
 
+
 window.onload = function(){
     var fechaHoy = new Date();
     console.log(fechaHoy.toDateString());
-    console.log(fechaHoy.format());
+    console.log(fechaHoy.addDaysToCurrentDay(5).format());
 }
